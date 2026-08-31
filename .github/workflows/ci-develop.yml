@@ -4,13 +4,18 @@ on:
   push:
     branches:
       - develop
+      - feature/ci-develop
+
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Descargar codigo
+      - name: Descargar código
         uses: actions/checkout@v4
 
       - name: Configurar Java
@@ -20,8 +25,11 @@ jobs:
           java-version: '21'
           cache: maven
 
+      - name: Dar permisos a Maven Wrapper
+        run: chmod +x mvnw
+
       - name: Ejecutar pruebas
         run: ./mvnw test
 
-      - name: Construir aplicacion
+      - name: Construir aplicación
         run: ./mvnw clean package -DskipTests
