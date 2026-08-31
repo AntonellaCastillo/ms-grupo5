@@ -16,6 +16,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.DecimalMin;
+
 
 // ENTIDAD PEDIDO (cabecera de la compra web).
 // Cubre cliente registrado e invitado (HU-22, 23, 24, 25, 27, 48, 53, 54).
@@ -48,5 +50,8 @@ public class Pedido {
     // Id Externo: si es retiro, en qué sucursal (MS Sucursales). Opcional.
     private Long idSucursalRetiro;
 
+    @NotNull(message = "El total es obligatorio")
+    @DecimalMin(value = "0.0", inclusive = false, message = "El total debe ser mayor que cero")
     private BigDecimal total;
+
 }
