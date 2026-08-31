@@ -48,7 +48,6 @@ public class Pedido {
     private EstadoPedido estado;
 
     // Id Externo: si es retiro, en qué sucursal (MS Sucursales). Opcional.
-    @NotNull(message = "La sucursal de retiro es obligatoria si el pedido es para retiro")
     private Long idSucursalRetiro;
 
     @NotNull(message = "El total es obligatorio")
