@@ -1,14 +1,13 @@
-name: CI - Develop
+name: CI
 
 on:
   push:
     branches:
       - develop
-      - feature/ci-develop
 
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   build-and-test:
