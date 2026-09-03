@@ -2,6 +2,8 @@ package com.example.ms_pedido.controller;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,13 +45,15 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<Pedido> createPedido(@RequestBody Pedido pedido) {
+    public ResponseEntity<Pedido> createPedido(@Valid @RequestBody Pedido pedido) {
         Pedido createdPedido = pedidoService.save(pedido);
         return ResponseEntity.status(201).body(createdPedido);
     }
 
     @PutMapping("/{idPedido}")
-    public ResponseEntity<Pedido> updatePedido(@PathVariable Long idPedido, @RequestBody Pedido pedido) {
+    public ResponseEntity<Pedido> updatePedido(
+            @PathVariable Long idPedido,
+            @RequestBody Pedido pedido) {
         if (pedidoService.findById(idPedido) == null) {
             return ResponseEntity.notFound().build();
         }
@@ -59,7 +63,9 @@ public class PedidoController {
     }
 
     @PatchMapping("/{idPedido}")
-    public ResponseEntity<Pedido> patchPedido(@PathVariable Long idPedido, @RequestBody Pedido pedido) {
+    public ResponseEntity<Pedido> patchPedido(
+            @PathVariable Long idPedido,
+            @RequestBody Pedido pedido) {
         Pedido patchedPedido = pedidoService.patchPedido(idPedido, pedido);
         if (patchedPedido == null) {
             return ResponseEntity.notFound().build();
@@ -75,4 +81,5 @@ public class PedidoController {
         pedidoService.deleteById(idPedido);
         return ResponseEntity.noContent().build();
     }
+
 }

@@ -1,0 +1,32 @@
+name: Control de Pull Request - Develop
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  validar-pr-develop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar ramas del Pull Request
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref }}
+          TARGET_BRANCH: ${{ github.base_ref }}
+        run: |
+          echo "Rama de origen: $SOURCE_BRANCH"
+          echo "Rama de destino: $TARGET_BRANCH"
+
+      - name: Validar rama de origen
+        env:
+          SOURCE_BRANCH: ${{ github.head_ref }}
+        run: |
+          if [[ "$SOURCE_BRANCH" != "main" && ! "$SOURCE_BRANCH" =~ ^[^/]+/.+$ ]]; then
+            echo "Rama no permitida: $SOURCE_BRANCH"
+            echo "Se espera una rama con formato prefijo/descripcion o main."
+            exit 1
+          fi
+
+          echo "Rama permitida: $SOURCE_BRANCH"

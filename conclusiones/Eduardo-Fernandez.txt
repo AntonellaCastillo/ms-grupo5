@@ -1,0 +1,7 @@
+**Eduardo Fernández**:
+Durante el desarrollo del proyecto aprendi a utilizar varias herramientas y metodologias, 
+ademas de adentrarme mas en la cultura DevOps y en la importancia de la colaboraciion.
+Ademas el utilizar la metodologia de ramificacion gitflow me ayudo a entender mejor como organizar y 
+gestionar el codigo de manera eficiente, permitiendo un flujo de trabajo mas ordenado y colaborativo.
+Una de las principales dificultades que enfrente fue la integracion de los pipelines de CI/CD, ya que requirio un 
+entendimiento profundo de las herramientas y su configuracion.
