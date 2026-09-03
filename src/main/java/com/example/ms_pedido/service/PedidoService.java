@@ -65,6 +65,9 @@ public class PedidoService {
     }
 
     public void deleteById(Long idPedido) {
-        pedidoRepository.deleteById(idPedido);
+    if (!pedidoRepository.existsById(idPedido)) {
+        throw new RuntimeException("No se puede eliminar: pedido con id " + idPedido + " no existe");
     }
+    pedidoRepository.deleteById(idPedido);
+}
 }
