@@ -1,0 +1,3 @@
+**Pedro López**:Como reflexión del trabajo, aprendí respecto a la automatización, ocupando gitflow para repartirnos de mejor manera cada aporte, 
+nos dividimos para crear distintas ramas, pipeline, hotfix y feature, y ahí aceptar el Pull Request cada vez que ya las teníamos listas. 
+Igual aprendí varios comandos de github y sus funciones, debido a que es algo nuevo para mi y estoy aprendiendo con este tipo de trabajos.
