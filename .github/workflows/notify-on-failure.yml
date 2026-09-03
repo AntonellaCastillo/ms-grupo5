@@ -1,0 +1,21 @@
+name: Notificar fallos al equipo
+on:
+  workflow_run:
+    workflows: ["CI", "Control de Pull Request - Develop", "Control de Pull Request - Main"]
+    types: [completed]
+
+jobs:
+  notify:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear issue de alerta
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `⚠️ Pipeline falló: ${context.payload.workflow_run.name}`,
+              body: `El workflow **${context.payload.workflow_run.name}** falló en la rama \`${context.payload.workflow_run.head_branch}\`.\n\nRevisa el detalle aquí: ${context.payload.workflow_run.html_url}`
+            })
