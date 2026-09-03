@@ -166,3 +166,9 @@ Todos los integrantes pueden crear ramas, implementar cambios y revisar Pull Req
 - Responder las observaciones de la revisión.
 - Confirmar que el Pull Request esté listo antes de solicitar el merge.
 
+## Uso de Inteligencia Artificial
+
+Durante el desarrollo del proyecto se utilizó ChatGPT como herramienta de apoyo. **OpenAI (2026)** fue utilizado para resolver dudas técnicas, apoyar la identificación de errores, sugerir alternativas de implementación y colaborar en la elaboración de documentación.
+
+Las respuestas proporcionadas por la herramienta fueron revisadas y validadas por los integrantes del equipo antes de ser utilizadas en el proyecto.
+
