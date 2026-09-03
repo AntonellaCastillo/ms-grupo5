@@ -1,0 +1,8 @@
+**Antonella Castillo Salgado**: 
+Al realizar este proyecto de manera colaborativa, aprendí a trabajar mejor con GitHub, a 
+comprender qué hace un workflow y a crear uno. Además, aprendí a utilizar GitFlow para organizar el trabajo en distintas 
+ramas y a familiarizarme con el uso de los pull request. Aunque todavía hay algunos conceptos que me cuestan, considero 
+que este tipo de proyectos me permite aprender mediante la práctica y comprender mejor cómo se aplican estas herramientas 
+en un trabajo colaborativo. Mi aporte al proyecto fue participar en la organización y desarrollo de las tareas asignadas, 
+colaborando con el equipo mediante GitHub y aplicando las herramientas aprendidas durante el proyecto. Estas herramientas
+ siguen siendo nuevas para mí, pero confío en que, con tiempo y experiencia, podré comprenderlas mejor y utilizarlas con mayor autonomía.
